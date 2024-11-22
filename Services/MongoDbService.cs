@@ -18,7 +18,6 @@ namespace GlobalSolution.Services
             _consumosCollection = database.GetCollection<ConsumoModel>(configuration.GetValue<string>("MongoDbSettings:CollectionName"));
         }
 
-        // Inserir consumo no MongoDB
         public async Task InsertConsumoAsync(ConsumoModel consumo)
         {
             try
@@ -31,7 +30,6 @@ namespace GlobalSolution.Services
             }
         }
 
-        // Recuperar todos os consumos do MongoDB
         public async Task<List<ConsumoModel>> GetConsumosAsync()
         {
             try

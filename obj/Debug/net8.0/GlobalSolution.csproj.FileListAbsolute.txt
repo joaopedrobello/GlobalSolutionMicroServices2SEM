@@ -66,5 +66,4 @@ C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\xunit.abstraction
 C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\xunit.assert.dll
 C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\xunit.core.dll
 C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\xunit.execution.dotnet.dll
-C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\GlobalSolution.Tests\obj\GlobalSolution.Tests.csproj.nuget.dgspec.json
-C:\Users\labsfiap\source\repos\GlobalSolution\bin\Debug\net8.0\GlobalSolution.Tests\obj\project.assets.json
+C:\Users\labsfiap\source\repos\GlobalSolution\obj\Debug\net8.0\GlobalSolution.sourcelink.json

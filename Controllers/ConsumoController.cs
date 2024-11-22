@@ -19,7 +19,6 @@ namespace GlobalSolution.Controllers
             _cacheService = cacheService;
         }
 
-        // Registrar consumo de energia
         [HttpPost]
         [Route("consumo")]
         public async Task<IActionResult> RegistrarConsumo([FromBody] ConsumoModel consumo)
@@ -43,22 +42,18 @@ namespace GlobalSolution.Controllers
             }
         }
 
-        // Consultar consumos registrados
         [HttpGet]
         [Route("consumo")]
         public async Task<IActionResult> ObterConsumos()
         {
             const string cacheKey = "consumos";
 
-            // Verifica se os dados estão no cache
             var cachedConsumos = await _cacheService.GetCacheAsync<List<ConsumoModel>>(cacheKey);
             if (cachedConsumos != null)
             {
-                // Dados encontrados no cache, retorna imediatamente
                 return StatusCode(200, cachedConsumos);
             }
 
-            // Se não estiver no cache, consulta o MongoDB
             try
             {
                 var consumos = await _mongoDbService.GetConsumosAsync();
@@ -67,7 +62,6 @@ namespace GlobalSolution.Controllers
                     return NotFound("Nenhum dado de consumo encontrado.");
                 }
 
-                // Armazena os dados no cache antes de retornar a resposta
                 await _cacheService.SetCacheAsync(cacheKey, consumos);
 
                 return StatusCode(200, consumos);
